@@ -1,0 +1,309 @@
+// index.html
+
+
+<!doctype html>
+<html>
+ <head>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+  <h1 id="title">Days of the week</h2>
+  
+  <div class="flags">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/English_language.svg" id="english" onClick="english()">
+ 
+ <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Portuguese_language_flags.png " onClick="portuguese()">
+ 
+ <img src="https://upload.wikimedia.org/wikipedia/commons/6/65/German-Language-Flag.svg" onClick="german()">
+</div>
+
+<div class="flags" >
+ <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Italy_%282003%E2%80%932006%29.svg" onClick="italian()">
+ 
+ <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Flag_of_France.svg" onClick="french()">
+ 
+ <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Spanish_language_%28ES-MX%29.svg" onClick="spanish()">
+</div>
+
+  <p id="sun" class="day weekend">  Sunday</p>
+  <p id="mon" class="day">Monday  </p>
+  <p id="tue" class="day">Tuesday</p>
+  <p id="wed" class="day">Wednesday</p>
+  <p id="thu" class="day">Thursday</p>
+  <p id="fri" class="day">Friday</p>
+  <p id="sat" class="day weekend">Saturday</p>
+  
+  
+ </body>
+ <script src="script.js">
+ </script>
+</html>
+
+// style.css
+
+img {
+height: 60px;
+ width: 70px;
+ border-radius: 80px ;
+}
+
+span{
+font-style: normal;
+font-size: 40px;
+}
+
+h1 {
+ text-align: center;
+ font-family: cursive ;
+}
+
+p {
+ border-radius: 20px;
+ font-family: monospace;
+ font-size: 20px ;
+ 
+}
+
+.flags{
+text-align: center;
+}
+
+.day {
+ background-color: olive;
+ margin: 5px;
+ padding: 10px;
+ text-align: center;
+}
+
+.weekend {
+ background-color: seaGreen ;
+ font-style: italic;
+}
+
+.today {
+ font-weight: bold;
+ border: 2px solid black;
+}
+
+.past {
+ color: gray;
+ background-color: lightgray;
+}
+
+// script.js
+
+var zeit = new Date();
+var dayOfTheWeek = zeit.getDay();
+
+
+
+switch (dayOfTheWeek) {
+
+ case 0:
+  document.getElementById("sun")
+   .classList.add('today');
+  break
+
+ case 1:
+  document.getElementById("sun")
+   .classList.add('past');
+  document.getElementById("mon")
+   .classList.add('today');
+  break
+
+ case 2:
+  document.getElementById("sun")
+   .classList.add('past');
+  document.getElementById("mon")
+   .classList.add('past');
+  document.getElementById("tue")
+   .classList.add('today');
+  break
+
+ case 3:
+  document.getElementById("sun")
+   .classList.add('past');
+  document.getElementById("mon")
+   .classList.add('past');
+  document.getElementById("tue")
+   .classList.add('past');
+  document.getElementById("wed")
+   .classList.add('today');
+  break
+
+ case 4:
+  document.getElementById("sun")
+   .classList.add('past');
+  document.getElementById("mon")
+   .classList.add('past');
+  document.getElementById("tue")
+   .classList.add('past');
+  document.getElementById("wed")
+   .classList.add('past');
+  document.getElementById("thu")
+   .classList.add('today');
+  break
+
+ case 5:
+  document.getElementById("sun")
+   .classList.add('past');
+  document.getElementById("mon")
+   .classList.add('past');
+  document.getElementById("tue")
+   .classList.add('past');
+  document.getElementById("wed")
+   .classList.add('past');
+  document.getElementById("thu")
+   .classList.add('past');
+  document.getElementById("fri")
+   .classList.add('today');
+  break
+
+ case 6:
+  document.getElementById("sun")
+   .classList.add('past');
+  document.getElementById("mon")
+   .classList.add('past');
+  document.getElementById("tue")
+   .classList.add('past');
+  document.getElementById("wed")
+   .classList.add('past');
+  document.getElementById("thu")
+   .classList.add('past');
+  document.getElementById("fri")
+   .classList.add('past');
+  document.getElementById("sat")
+   .classList.add('today');
+  break
+
+
+}
+
+
+function english() {
+ document.getElementById("title")
+  .innerHTML = "Days of the week ";
+ document.getElementById("mon")
+  .innerHTML = "Monday";
+ document.getElementById("tue")
+  .innerHTML = "Tuesday";
+ document.getElementById("wed")
+  .innerHTML = "Wednesday";
+ document.getElementById("thu")
+  .innerHTML = "Thursday";
+ document.getElementById("fri")
+  .innerHTML = "Friday";
+ document.getElementById("sat")
+  .innerHTML = "Saturday";
+ document.getElementById("sun")
+  .innerHTML = "Sunday";
+
+}
+
+function portuguese() {
+ document.getElementById("title")
+  .innerHTML = "Dias da semana";
+ document.getElementById("mon")
+  .innerHTML = "Segunda-feira";
+ document.getElementById("tue")
+  .innerHTML = "Terça-feira";
+ document.getElementById("wed")
+  .innerHTML = "Quarta-feira";
+ document.getElementById("thu")
+  .innerHTML = "Quinta-feira";
+ document.getElementById("fri")
+  .innerHTML = "Sexta-feira";
+ document.getElementById("sat")
+  .innerHTML = "Sábado";
+ document.getElementById("sun")
+  .innerHTML = "Domingo";
+
+}
+
+
+function german() {
+ document.getElementById("title")
+  .innerHTML = "Tage der Woche";
+
+ document.getElementById("mon")
+  .innerHTML = "Montag";
+ document.getElementById("tue")
+  .innerHTML = "Dienstag";
+ document.getElementById("wed")
+  .innerHTML = "Mittwoch";
+ document.getElementById("thu")
+  .innerHTML = "Donnerstag";
+ document.getElementById("fri")
+  .innerHTML = "Freitag";
+ document.getElementById("sat")
+  .innerHTML = "Samstag";
+ document.getElementById("sun")
+  .innerHTML = "Sonntag";
+
+}
+
+
+function italian() {
+ document.getElementById("title")
+  .innerHTML =
+  "Giorni della settimana";
+ document.getElementById("mon")
+  .innerHTML = "Lunedì";
+ document.getElementById("tue")
+  .innerHTML = "Martedì";
+ document.getElementById("wed")
+  .innerHTML = "Mercoledì";
+ document.getElementById("thu")
+  .innerHTML = "Giovedì";
+ document.getElementById("fri")
+  .innerHTML = "Venerdì";
+ document.getElementById("sat")
+  .innerHTML = "Sabato";
+ document.getElementById("sun")
+  .innerHTML = "Domenica";
+
+}
+
+
+
+function french() {
+ document.getElementById("title")
+  .innerHTML = "Jours de la semaine";
+ document.getElementById("mon")
+  .innerHTML = "Lundi";
+ document.getElementById("tue")
+  .innerHTML = "Mardi";
+ document.getElementById("wed")
+  .innerHTML = "Mercredi";
+ document.getElementById("thu")
+  .innerHTML = "Jeudi";
+ document.getElementById("fri")
+  .innerHTML = "Vendredi";
+ document.getElementById("sat")
+  .innerHTML = "Samedi";
+ document.getElementById("sun")
+  .innerHTML = "Dimanche";
+
+}
+
+
+
+function spanish() {
+ document.getElementById("title")
+  .innerHTML = "Días de la semana";
+ document.getElementById("mon")
+  .innerHTML = "Lunes";
+ document.getElementById("tue")
+  .innerHTML = "Martes";
+ document.getElementById("wed")
+  .innerHTML = "Miércoles";
+ document.getElementById("thu")
+  .innerHTML = "Jueves";
+ document.getElementById("fri")
+  .innerHTML = "Viernes";
+ document.getElementById("sat")
+  .innerHTML = "Sábado";
+ document.getElementById("sun")
+  .innerHTML = "Domingo";
+
+}
